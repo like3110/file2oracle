@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+    <auth id="ORACLE1118119">
+        <jdbc-url>jdbc:oracle:thin:@10.45.53.1111:1521/res189</jdbc-url>
+        <username>1234</username>
+        <password>oGhAOa0pXez3XLHOCvD+8B3lR7rcuDaNKWQV7B7MYAdyddY8y1AQeKpBTXygmJqVyxrwapl5Sg+HYRen/ranCA==</password>
+    </auth>
+    <auth id="ORACLE189">
+        <jdbc-url>jdbc:oracle:thin:@10.45.53.189:1521/res189</jdbc-url>
+        <username>test_1</username>
+        <password>oGhAOa0pXez3XLHOCvD+8B3lR7rcuDaNKWQV7B7MYAdyddY8y1AQeKpBTXygmJqVyxrwapl5Sg+HYRen/ranCA==</password>
+    </auth>
+    <auth id="ORACLE187">
+        <jdbc-url>jdbc:oracle:thin:@10.45.59.187:1521/orcl</jdbc-url>
+        <username>BDTA_PD_TEST</username>
+        <password>U78WM9D7wiMFR45JZ98HrcGQGm8K9TrRVP5ogzjK0+rP+ipbTuXX/onZCWN33Q0p1lFN/8kpRx1zlsgPZD7FuQ==</password>
+    </auth>
+    <auth id="ORACLE_target">
+        <jdbc-url>jdbc:oracle:thin:@172.25.240.4:1521/resd2</jdbc-url>
+        <username>target</username>
+        <password>ixq11YJovTOokQnd0Rldg2UDfeBOZXmbqvzLn7h9k5jIQK+K2xvoUd4RY6Poq9OfcweF9fSpsc7LGynHckt4HQ==</password>
+    </auth>
+</configuration>
