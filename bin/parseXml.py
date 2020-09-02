@@ -20,12 +20,13 @@ FILE_PATH = os.path.realpath(__file__)
 BIN_PATH = os.path.split(FILE_PATH)[0]
 BIN_PATH = os.path.split(BIN_PATH)[0]
 # 数据库参数集配置
-#DB_CONFIG_PATH = ROOT_PATH + '\conf\dbParams'
-CONFIG_PATH = BIN_PATH+os.sep+'conf'
+# DB_CONFIG_PATH = ROOT_PATH + '\conf\dbParams'
+CONFIG_PATH = BIN_PATH + os.sep + 'conf'
 
-DB_CONFIG_PATH = CONFIG_PATH+os.sep+'dbParams'
+DB_CONFIG_PATH = CONFIG_PATH + os.sep + 'dbParams'
 
-db_cfg_file=DB_CONFIG_PATH+os.sep+'db_config.xml'
+db_cfg_file = DB_CONFIG_PATH + os.sep + 'db_config.xml'
+
 
 # 打印日志
 def debug_print(s, flg=0):
@@ -35,6 +36,7 @@ def debug_print(s, flg=0):
         print(s)
     else:
         pass
+
 
 '''
 解析数据库参数集 根目录为：C:/Users/fcvan/PycharmProjects/pythonLearning/file2oracle/conf/dbParams
@@ -49,6 +51,7 @@ def debug_print(s, flg=0):
  </configuration>
 '''
 
+
 def paramsInfo(authDbId):
     tree = etree.parse(db_cfg_file)
     elem = tree.find('auth[@id="%s"]' % authDbId)
@@ -57,6 +60,7 @@ def paramsInfo(authDbId):
     password = passwdUtil.decrypt(elem.findtext('password'))
     elem = [jdbcURL, username, password]
     return elem
+
 
 if __name__ == '__main__':
     auth = paramsInfo('ORACLE187')

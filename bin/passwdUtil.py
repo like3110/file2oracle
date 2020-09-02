@@ -9,20 +9,24 @@ from Crypto.Cipher import AES
 
 FILE_PATH = os.path.realpath(__file__)
 BIN_PATH = os.path.split(FILE_PATH)[0]
-#CONFIG_PATH = os.path.split(BIN_PATH)[0] + '\conf\\auth.xml'
-#print CONFIG_PATH
+
+
+# CONFIG_PATH = os.path.split(BIN_PATH)[0] + '\conf\\auth.xml'
+# print CONFIG_PATH
 
 # 加密函数
 def encrypt(plainPassword):
     def pad(s):
         x = AES.block_size - len(s) % AES.block_size
         return s + (chr(x) * x)
+
     paddedPassword = pad(plainPassword)
     iv = Random.OSRNG.new().read(AES.block_size)
     key = Random.OSRNG.new().read(32)
     cipher = AES.new(key, AES.MODE_CBC, iv)
     encryptedPassword = base64.b64encode(iv + cipher.encrypt(paddedPassword) + key)
     return encryptedPassword
+
 
 # 解密函数
 def decrypt(encryptedPassword):
@@ -36,8 +40,8 @@ def decrypt(encryptedPassword):
 
 
 if __name__ == '__main__':
-    #print sys.argv
-    #print len(sys.argv)
+    # print sys.argv
+    # print len(sys.argv)
     if len(sys.argv) == 3:
         if sys.argv[1] == '-e':
             print(encrypt(sys.argv[2]))
